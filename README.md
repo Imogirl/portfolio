@@ -1,59 +1,77 @@
-# ImoPortfolio
+🌟 ImoPortfolio — Angular Portfolio Website
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.0.
+A modern and responsive personal portfolio website built using Angular 21.
+Showcase your skills, projects, and personality with a clean UI and smooth animations.
 
-## Development server
+🚀 Live Demo
 
-To start a local development server, run:
+🔗 Add your demo link here (optional)
 
-```bash
+🛠️ Tech Stack
+Technology	Description
+Angular 21	Frontend framework
+TypeScript	Strong-typed JavaScript
+SCSS / CSS	Styling
+HTML5	Structure
+Angular CLI	Development toolkit
+📦 Project Setup
+▶️ Start Development Server
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+Then open your browser at:
+👉 http://localhost:4200/
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+The app reloads automatically on file changes.
 
-```bash
+🧱 Project Commands
+📌 Generate a Component
 ng generate component component-name
-```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
+📌 List All Schematics
 ng generate --help
-```
 
-## Building
-
-To build the project run:
-
-```bash
+🏗️ Build the Project
 ng build
-```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-## Running unit tests
+Output files will be in the dist/ folder (optimized by default).
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
+🧪 Testing
+Run Unit Tests (Karma)
 ng test
-```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
+Run End-to-End Tests
 ng e2e
-```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
-## Additional Resources
+Note: Angular no longer includes a default e2e framework. You can integrate tools like Cypress, Playwright, or Protractor.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+📸 Screenshots (Optional)
+
+Add your screenshots here:
+
+Home Page	Portfolio Page
+
+	
+📚 Additional Resources
+
+📘 Angular CLI Documentation
+https://angular.dev/tools/cli
+
+❤️ Author
+
+Imo (Imasha Dulsini)
+✨ Passionate Frontend Developer | Angular Enthusiast
+
+Add your social links below:
+
+🌐 Portfolio: link here
+
+🐦 Twitter: link here
+
+💼 LinkedIn: link here
+
+⭐ Support This Project
+
+If you like this project, give it a star ⭐ on GitHub — it motivates me to build more!
