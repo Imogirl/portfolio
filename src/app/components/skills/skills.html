@@ -1,0 +1,104 @@
+<section id="skills" class="skills-section">
+  <div class="skills-container">
+    <!-- Section Header -->
+    <div class="section-header">
+      <span class="section-label">What I Do</span>
+      <h2 class="section-title">
+        <span class="title-gradient">My Skills</span>
+      </h2>
+      <p class="section-description">
+        A comprehensive toolkit of technologies and frameworks I use to bring ideas to life
+      </p>
+    </div>
+
+    <!-- Skills Categories Tabs -->
+    <div class="skills-tabs">
+      <button 
+        *ngFor="let category of categories; let i = index"
+        class="tab-button"
+        [class.active]="activeCategory === i"
+        (click)="setActiveCategory(i)">
+        <span class="tab-icon" [innerHTML]="category.icon"></span>
+        <span class="tab-text">{{ category.name }}</span>
+        <span class="tab-glow"></span>
+      </button>
+    </div>
+
+    <!-- Skills Grid -->
+    <div class="skills-grid">
+      <div 
+        *ngFor="let skill of filteredSkills; let i = index"
+        class="skill-card"
+        [style.animation-delay]="i * 0.1 + 's'"
+        (mouseenter)="hoveredSkill = skill.name"
+        (mouseleave)="hoveredSkill = null">
+        
+        <div class="card-glow"></div>
+        
+        <div class="skill-icon">
+          <span [innerHTML]="skill.icon"></span>
+          <div class="icon-glow"></div>
+        </div>
+        
+        <h3 class="skill-name">{{ skill.name }}</h3>
+        
+        <div class="skill-level">
+          <div class="level-bar">
+            <div 
+              class="level-fill" 
+              [style.width]="skill.level + '%'"
+              [class.animated]="hoveredSkill === skill.name">
+            </div>
+          </div>
+          <span class="level-text">{{ skill.level }}%</span>
+        </div>
+        
+        <p class="skill-description">{{ skill.description }}</p>
+        
+        <div class="skill-years">
+          <svg class="years-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 6v6l4 2"/>
+          </svg>
+          <span>{{ skill.experience }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="stats-section">
+      <div class="stat-card" *ngFor="let stat of stats; let i = index" [style.animation-delay]="i * 0.2 + 's'">
+        <div class="stat-glow"></div>
+        <div class="stat-icon" [innerHTML]="stat.icon"></div>
+        <div class="stat-content">
+          <h3 class="stat-number">
+            <span class="counter" [attr.data-target]="stat.value">0</span>
+            <span class="stat-suffix">{{ stat.suffix }}</span>
+          </h3>
+          <p class="stat-label">{{ stat.label }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Technologies Marquee -->
+    <div class="tech-marquee">
+      <div class="marquee-content">
+        <div class="tech-item" *ngFor="let tech of technologies">
+          <span class="tech-logo" [innerHTML]="tech.logo"></span>
+          <span class="tech-name">{{ tech.name }}</span>
+        </div>
+        <!-- Duplicate for seamless loop -->
+        <div class="tech-item" *ngFor="let tech of technologies">
+          <span class="tech-logo" [innerHTML]="tech.logo"></span>
+          <span class="tech-name">{{ tech.name }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Background Effects -->
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
+  <div class="particle" *ngFor="let particle of particles" [style]="particle.style"></div>
+</section>

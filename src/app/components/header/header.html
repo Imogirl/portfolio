@@ -7,13 +7,13 @@
     
     <ul class="nav-menu" [class.active]="isMenuOpen">
       <li class="nav-item">
-        <a href="#home" class="nav-link" (click)="closeMenu()">
+        <a routerLink="/" class="nav-link" (click)="closeMenu()">
           <span class="link-text">Home</span>
           <span class="link-underline"></span>
         </a>
       </li>
       <li class="nav-item">
-        <a href="#skills" class="nav-link" (click)="closeMenu()">
+        <a routerLink="/skills" class="nav-link" (click)="closeMenu()">
           <span class="link-text">Skills</span>
           <span class="link-underline"></span>
         </a>

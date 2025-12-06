@@ -19,10 +19,13 @@ export class Footer implements OnInit {
     this.checkScrollPosition();
   }
 
-  private checkScrollPosition(): void {
-    // Show scroll to top button after scrolling down 300px
-    this.showScrollTop = window.pageYOffset > 300;
+
+  checkScrollPosition() {
+  if (typeof window !== 'undefined') {
+    this.showScrollTop = window.scrollY > 300;
   }
+}
+
 
   scrollToTop(): void {
     // Smooth scroll to top
