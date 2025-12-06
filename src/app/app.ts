@@ -24,7 +24,7 @@ import { Footer } from './components/footer/footer';
 
     .main-content {
       flex: 1;
-      padding-top: 80px;
+      padding-top: 0px;
     }
   `]
 })
