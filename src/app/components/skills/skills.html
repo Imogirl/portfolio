@@ -84,12 +84,12 @@
     <div class="tech-marquee">
       <div class="marquee-content">
         <div class="tech-item" *ngFor="let tech of technologies">
-          <span class="tech-logo" [innerHTML]="tech.logo"></span>
+          <fa-icon [icon]="tech.logo" size="2x"[style.color]="tech.color"></fa-icon>
           <span class="tech-name">{{ tech.name }}</span>
         </div>
         <!-- Duplicate for seamless loop -->
         <div class="tech-item" *ngFor="let tech of technologies">
-          <span class="tech-logo" [innerHTML]="tech.logo"></span>
+          <fa-icon [icon]="tech.logo" size="2x"[style.color]="tech.color"></fa-icon>
           <span class="tech-name">{{ tech.name }}</span>
         </div>
       </div>

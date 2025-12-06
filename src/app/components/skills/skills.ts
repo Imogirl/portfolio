@@ -1,5 +1,12 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { 
+  faAngular, faReact, faNodeJs, faHtml5, faCss3, faJs, faGit, faAws 
+} from '@fortawesome/free-brands-svg-icons';
+import { faDatabase, faServer, faTools, faRocket, faClock } from '@fortawesome/free-solid-svg-icons';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+
 
 interface Skill {
   name: string;
@@ -24,13 +31,14 @@ interface Stat {
 
 interface Technology {
   name: string;
-  logo: string;
+  logo: IconDefinition;
+  color: string; 
 }
 
 @Component({
   selector: 'app-skills',
    standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,FontAwesomeModule],
   templateUrl: './skills.html',
   styleUrls: ['./skills.css']
 })
@@ -53,7 +61,7 @@ export class Skills implements OnInit, AfterViewInit {
       name: 'Angular',
       level: 50,
       description: 'Building dynamic single-page applications with advanced features',
-      experience: '3+ years',
+      experience: '2+ Months',
       icon: '🅰️',
       category: 'Frontend'
     },
@@ -61,7 +69,7 @@ export class Skills implements OnInit, AfterViewInit {
       name: 'React',
       level: 90,
       description: 'Creating interactive UIs with modern React hooks and patterns',
-      experience: '4+ years',
+      experience: '6+ Months',
       icon: '⚛️',
       category: 'Frontend'
     },
@@ -69,7 +77,7 @@ export class Skills implements OnInit, AfterViewInit {
       name: 'TypeScript',
       level: 92,
       description: 'Type-safe development with advanced TypeScript features',
-      experience: '3+ years',
+      experience: '3+ Months',
       icon: '📘',
       category: 'Frontend'
     },
@@ -77,55 +85,31 @@ export class Skills implements OnInit, AfterViewInit {
       name: 'Node.js',
       level: 88,
       description: 'Building scalable server-side applications and REST APIs',
-      experience: '3+ years',
+      experience: '6+ Months',
       icon: '🟢',
-      category: 'Backend'
-    },
-    {
-      name: 'Python',
-      level: 85,
-      description: 'Backend development and data processing with Python',
-      experience: '2+ years',
-      icon: '🐍',
       category: 'Backend'
     },
     {
       name: 'MongoDB',
       level: 87,
       description: 'NoSQL database design and optimization',
-      experience: '2+ years',
+      experience: '6+ Months',
       icon: '🍃',
-      category: 'Database'
-    },
-    {
-      name: 'PostgreSQL',
-      level: 83,
-      description: 'Relational database management and complex queries',
-      experience: '2+ years',
-      icon: '🐘',
       category: 'Database'
     },
     {
       name: 'Git',
       level: 90,
       description: 'Version control and collaborative development workflows',
-      experience: '4+ years',
+      experience: '1+ years',
       icon: '📦',
       category: 'Tools'
     },
     {
-      name: 'Docker',
-      level: 80,
-      description: 'Containerization and deployment automation',
-      experience: '2+ years',
-      icon: '🐳',
-      category: 'Tools'
-    },
-    {
-      name: 'CSS/SASS',
+      name: 'CSS',
       level: 93,
       description: 'Modern styling with animations and responsive design',
-      experience: '4+ years',
+      experience: '2+ years',
       icon: '🎨',
       category: 'Frontend'
     },
@@ -133,65 +117,47 @@ export class Skills implements OnInit, AfterViewInit {
       name: 'REST APIs',
       level: 89,
       description: 'Designing and implementing RESTful web services',
-      experience: '3+ years',
+      experience: '6+ Months',
       icon: '🔌',
-      category: 'Backend'
-    },
-    {
-      name: 'GraphQL',
-      level: 82,
-      description: 'Building efficient query-based APIs',
-      experience: '1+ years',
-      icon: '◈',
       category: 'Backend'
     }
   ];
 
   stats: Stat[] = [
     {
-      value: 50,
+      value: 5,
       suffix: '+',
       label: 'Projects Completed',
       icon: '🚀'
     },
     {
-      value: 3,
+      value: 1,
       suffix: '+',
       label: 'Years Experience',
       icon: '⏱️'
     },
     {
-      value: 20,
+      value: 5,
       suffix: '+',
       label: 'Technologies',
       icon: '💻'
     },
-    {
-      value: 100,
-      suffix: '%',
-      label: 'Client Satisfaction',
-      icon: '⭐'
-    }
   ];
 
-  technologies: Technology[] = [
-    { name: 'HTML5', logo: '🌐' },
-    { name: 'CSS3', logo: '🎨' },
-    { name: 'JavaScript', logo: '📜' },
-    { name: 'TypeScript', logo: '📘' },
-    { name: 'Angular', logo: '🅰️' },
-    { name: 'React', logo: '⚛️' },
-    { name: 'Vue.js', logo: '💚' },
-    { name: 'Node.js', logo: '🟢' },
-    { name: 'Express', logo: '🚂' },
-    { name: 'MongoDB', logo: '🍃' },
-    { name: 'PostgreSQL', logo: '🐘' },
-    { name: 'Firebase', logo: '🔥' },
-    { name: 'Git', logo: '📦' },
-    { name: 'Docker', logo: '🐳' },
-    { name: 'AWS', logo: '☁️' },
-    { name: 'Figma', logo: '🎯' }
-  ];
+ technologies: Technology[] = [
+  { name: 'HTML5', logo: faHtml5, color: '#DD4B25' },
+  { name: 'CSS3', logo: faCss3, color: '#264DE4' },
+  { name: 'JavaScript', logo: faJs, color: '#F7DF1E' },
+  { name: 'TypeScript', logo: faJs, color: '#3178C6' },
+  { name: 'Angular', logo: faAngular, color: '#DD0031' },
+  { name: 'React', logo: faReact, color: '#61DAFB' },
+  { name: 'Node.js', logo: faNodeJs, color: '#3C873A' },
+  { name: 'Express', logo: faServer, color: '#858484FF' },
+  { name: 'MongoDB', logo: faDatabase, color: '#47A248' },
+  { name: 'Git', logo: faGit, color: '#F05032' },
+  { name: 'AWS', logo: faAws, color: '#FF9900' },
+];
+
 
   ngOnInit(): void {
     this.filterSkills();
