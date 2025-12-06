@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import { ChangeDetectorRef } from '@angular/core';
+
 
 interface ProjectStat {
   label: string;
@@ -42,28 +43,7 @@ interface Project {
   imports: [CommonModule],
   templateUrl: './projects.html',
   styleUrls: ['./projects.css'],
-  animations: [
-    trigger('fadeIn', [
-      transition(':enter', [
-        style({ opacity: 0 }),
-        animate('300ms ease-in', style({ opacity: 1 }))
-      ]),
-      transition(':leave', [
-        animate('200ms ease-out', style({ opacity: 0 }))
-      ])
-    ]),
-    trigger('slideIn', [
-      transition(':enter', [
-        style({ transform: 'scale(0.9)', opacity: 0 }),
-        animate('300ms cubic-bezier(0.4, 0, 0.2, 1)', 
-          style({ transform: 'scale(1)', opacity: 1 }))
-      ]),
-      transition(':leave', [
-        animate('200ms ease-out', 
-          style({ transform: 'scale(0.9)', opacity: 0 }))
-      ])
-    ])
-  ]
+  
 })
 export class Projects implements OnInit, OnDestroy {
   
@@ -276,7 +256,12 @@ export class Projects implements OnInit, OnDestroy {
   // Modal state
   selectedProject: Project | null = null;
 
-  constructor(@Inject(PLATFORM_ID) platformId: object) {
+  trackByProjectId(index: number, project: Project) {
+  return project.id;
+}
+
+  constructor(@Inject(PLATFORM_ID) platformId: object,
+  private cdr: ChangeDetectorRef) {
     this.isBrowser = isPlatformBrowser(platformId);
   }
 
@@ -338,8 +323,9 @@ export class Projects implements OnInit, OnDestroy {
    */
   openProject(project: Project): void {
     this.selectedProject = project;
+    this.cdr.detectChanges();
     if (this.isBrowser) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = 'auto';
     }
   }
 
