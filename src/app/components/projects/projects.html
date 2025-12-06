@@ -1,0 +1,295 @@
+<section class="projects-section" id="projects">
+  <div class="projects-container">
+    
+    <!-- Section Header -->
+    <div class="section-header">
+      <span class="section-label">PORTFOLIO</span>
+      <h2 class="main-section-title">
+        Featured <span class="gradient-text">Projects</span>
+      </h2>
+      <p class="section-description">
+        Explore my latest work showcasing innovation and creativity
+      </p>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="filter-container">
+      @for (filter of filters; track filter) {
+        <button 
+          class="filter-btn"
+          [class.active]="activeFilter === filter"
+          (click)="filterProjects(filter)">
+          {{ filter }}
+        </button>
+      }
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="projects-grid">
+      @for (project of visibleProjects; track project.id; let i = $index) {
+        <div 
+          class="project-card"
+          [style.animation-delay]="(i * 0.1) + 's'">
+          
+          <div class="card-glow"></div>
+          
+          <!-- Card Image -->
+          <div class="card-image">
+            <img [src]="project.image" [alt]="project.title">
+            <div class="image-overlay">
+              <button class="overlay-btn" (click)="openProject(project)">
+                <span class="btn-icon">👁️</span>
+                View Details
+              </button>
+              @if (project.liveUrl) {
+                <a [href]="project.liveUrl" target="_blank" class="overlay-btn">
+                  <span class="btn-icon">🚀</span>
+                  Live Demo
+                </a>
+              }
+            </div>
+          </div>
+
+          <!-- Card Content -->
+          <div class="card-content">
+            <div class="card-tags">
+              @for (tag of project.tags; track tag) {
+                <span class="tag">{{ tag }}</span>
+              }
+            </div>
+            
+            <h3 class="card-title">{{ project.title }}</h3>
+            <p class="card-description">{{ project.description }}</p>
+            
+            <div class="card-footer">
+              <div class="tech-stack">
+                @for (tech of project.technologies.slice(0, 3); track tech) {
+                  <span class="tech-badge">{{ tech }}</span>
+                }
+              </div>
+              
+              <div class="card-actions">
+                @if (project.githubUrl) {
+                  <a [href]="project.githubUrl" target="_blank" class="action-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                  </a>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Load More Button -->
+    @if (hasMoreProjects) {
+      <div class="load-more-container">
+        <button class="load-more-btn" (click)="loadMore()">
+          <span>Load More Projects</span>
+          <span class="btn-arrow">→</span>
+        </button>
+      </div>
+    }
+  </div>
+
+  <!-- Background Effects -->
+  <div class="bg-gradient-1"></div>
+  <div class="bg-gradient-2"></div>
+  <div class="floating-particles">
+    @for (p of particles; track $index) {
+      <div class="particle" [ngStyle]="p"></div>
+    }
+  </div>
+</section>
+
+<!-- Project Modal -->
+@if (selectedProject) {
+  <div class="modal-overlay" (click)="closeModal()" @fadeIn>
+    <div class="modal-container" (click)="stopPropagation($event)" @slideIn>
+      
+      <!-- Close Button -->
+      <button class="modal-close" (click)="closeModal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Modal Content -->
+      <div class="modal-content">
+        
+        <!-- Header Section -->
+        <div class="modal-header">
+          <div class="modal-image">
+            <img [src]="selectedProject.image" [alt]="selectedProject.title">
+            <div class="modal-image-gradient"></div>
+          </div>
+          
+          <div class="modal-header-content">
+            <div class="modal-tags">
+              @for (tag of selectedProject.tags; track tag) {
+                <span class="modal-tag">{{ tag }}</span>
+              }
+            </div>
+            <h2 class="modal-title">{{ selectedProject.title }}</h2>
+            <p class="modal-subtitle">{{ selectedProject.category }}</p>
+          </div>
+        </div>
+
+        <!-- Body Section -->
+        <div class="modal-body">
+          
+          <!-- Description -->
+          <div class="modal-section">
+            <h3 class="section-title">
+              <span class="title-icon">📋</span>
+              Project Overview
+            </h3>
+            <p class="modal-description">{{ selectedProject.description }}</p>
+            @if (selectedProject.longDescription) {
+              <p class="modal-long-description">{{ selectedProject.longDescription }}</p>
+            }
+          </div>
+
+          <!-- Technologies -->
+          <div class="modal-section">
+            <h3 class="section-title">
+              <span class="title-icon">🛠️</span>
+              Technologies Used
+            </h3>
+            <div class="tech-grid">
+              @for (tech of selectedProject.technologies; track tech) {
+                <div class="tech-item">
+                  <span class="tech-icon">●</span>
+                  <span class="tech-name">{{ tech }}</span>
+                </div>
+              }
+            </div>
+          </div>
+
+          <!-- Features -->
+          @if (selectedProject.features) {
+            <div class="modal-section">
+              <h3 class="section-title">
+                <span class="title-icon">⭐</span>
+                Key Features
+              </h3>
+              <ul class="features-list">
+                @for (feature of selectedProject.features; track feature) {
+                  <li class="feature-item">
+                    <span class="feature-bullet">→</span>
+                    {{ feature }}
+                  </li>
+                }
+              </ul>
+            </div>
+          }
+
+          <!-- Project Stats -->
+          @if (selectedProject.stats) {
+            <div class="modal-section">
+              <h3 class="section-title">
+                <span class="title-icon">📊</span>
+                Project Statistics
+              </h3>
+              <div class="stats-grid">
+                @for (stat of selectedProject.stats; track stat.label) {
+                  <div class="stat-card">
+                    <div class="stat-value">{{ stat.value }}</div>
+                    <div class="stat-label">{{ stat.label }}</div>
+                  </div>
+                }
+              </div>
+            </div>
+          }
+
+          <!-- Gallery -->
+          @if (selectedProject.gallery && selectedProject.gallery.length > 0) {
+            <div class="modal-section">
+              <h3 class="section-title">
+                <span class="title-icon">🖼️</span>
+                Project Gallery
+              </h3>
+              <div class="gallery-grid">
+                @for (img of selectedProject.gallery; track img; let i = $index) {
+                  <div class="gallery-item" (click)="openGalleryImage(i)">
+                    <img [src]="img" [alt]="'Gallery image ' + (i + 1)">
+                    <div class="gallery-overlay">
+                      <span class="gallery-icon">🔍</span>
+                    </div>
+                  </div>
+                }
+              </div>
+            </div>
+          }
+
+          <!-- Challenges & Solutions -->
+          @if (selectedProject.challenges) {
+            <div class="modal-section">
+              <h3 class="section-title">
+                <span class="title-icon">🎯</span>
+                Challenges & Solutions
+              </h3>
+              <div class="challenges-container">
+                @for (challenge of selectedProject.challenges; track challenge.title) {
+                  <div class="challenge-item">
+                    <h4 class="challenge-title">{{ challenge.title }}</h4>
+                    <p class="challenge-solution">{{ challenge.solution }}</p>
+                  </div>
+                }
+              </div>
+            </div>
+          }
+
+          <!-- Team -->
+          @if (selectedProject.team) {
+            <div class="modal-section">
+              <h3 class="section-title">
+                <span class="title-icon">👥</span>
+                Team & Role
+              </h3>
+              <p class="team-info">
+                <strong>Team Size:</strong> {{ selectedProject.team.size }}<br>
+                <strong>My Role:</strong> {{ selectedProject.team.role }}<br>
+                <strong>Duration:</strong> {{ selectedProject.team.duration }}
+              </p>
+            </div>
+          }
+
+        </div>
+
+        <!-- Footer Section -->
+        <div class="modal-footer">
+          <div class="footer-links">
+            @if (selectedProject.githubUrl) {
+              <a [href]="selectedProject.githubUrl" target="_blank" class="modal-btn btn-secondary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                View Code
+              </a>
+            }
+            
+            @if (selectedProject.liveUrl) {
+              <a [href]="selectedProject.liveUrl" target="_blank" class="modal-btn btn-primary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+                Live Demo
+              </a>
+            }
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Decorative Elements -->
+      <div class="modal-glow modal-glow-1"></div>
+      <div class="modal-glow modal-glow-2"></div>
+    </div>
+  </div>
+}
