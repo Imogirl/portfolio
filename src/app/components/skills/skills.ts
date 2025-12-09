@@ -2,9 +2,9 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { 
-  faAngular, faReact, faNodeJs, faHtml5, faCss3, faJs, faGit, faAws 
+  faAngular, faReact, faNodeJs, faHtml5, faCss3, faJs, faGit, faAws
 } from '@fortawesome/free-brands-svg-icons';
-import { faDatabase, faServer, faTools, faRocket, faClock } from '@fortawesome/free-solid-svg-icons';
+import { faDatabase, faServer, faTools, faRocket, faClock,  faBolt, faPaintBrush, faCog, faWrench,faLayerGroup, faLaptopCode  } from '@fortawesome/free-solid-svg-icons';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 
@@ -13,13 +13,15 @@ interface Skill {
   level: number;
   description: string;
   experience: string;
-  icon: string;
+  icon: IconDefinition;
+  color: string;
   category: string;
 }
 
 interface Category {
   name: string;
-  icon: string;
+  icon: IconDefinition;
+  color:string;
 }
 
 interface Stat {
@@ -49,11 +51,11 @@ export class Skills implements OnInit, AfterViewInit {
   particles: any[] = [];
 
   categories: Category[] = [
-    { name: 'All', icon: '⚡' },
-    { name: 'Frontend', icon: '🎨' },
-    { name: 'Backend', icon: '⚙️' },
-    { name: 'Database', icon: '💾' },
-    { name: 'Tools', icon: '🛠️' }
+    { name: 'All', icon: faLayerGroup ,color:'#FFD700'  },
+    { name: 'Frontend', icon: faLaptopCode, color:'#FF4500'  },
+    { name: 'Backend', icon: faServer, color:'#1E90FF'  },
+    { name: 'Database', icon: faDatabase, color:'#32CD32'  },
+    { name: 'Tools', icon: faWrench, color:'#8A2BE2'  },
   ];
 
   skills: Skill[] = [
@@ -62,7 +64,8 @@ export class Skills implements OnInit, AfterViewInit {
       level: 50,
       description: 'Building dynamic single-page applications with advanced features',
       experience: '2+ Months',
-      icon: '🅰️',
+      icon: faAngular,
+      color: '#DD0031',
       category: 'Frontend'
     },
     {
@@ -70,7 +73,8 @@ export class Skills implements OnInit, AfterViewInit {
       level: 90,
       description: 'Creating interactive UIs with modern React hooks and patterns',
       experience: '6+ Months',
-      icon: '⚛️',
+      icon: faReact,
+      color: '#61DAFB',
       category: 'Frontend'
     },
     {
@@ -78,7 +82,8 @@ export class Skills implements OnInit, AfterViewInit {
       level: 92,
       description: 'Type-safe development with advanced TypeScript features',
       experience: '3+ Months',
-      icon: '📘',
+      icon: faJs,
+      color: '#3178C6',
       category: 'Frontend'
     },
     {
@@ -86,7 +91,8 @@ export class Skills implements OnInit, AfterViewInit {
       level: 88,
       description: 'Building scalable server-side applications and REST APIs',
       experience: '6+ Months',
-      icon: '🟢',
+      icon: faNodeJs,
+      color: '#3C873A',
       category: 'Backend'
     },
     {
@@ -94,7 +100,8 @@ export class Skills implements OnInit, AfterViewInit {
       level: 87,
       description: 'NoSQL database design and optimization',
       experience: '6+ Months',
-      icon: '🍃',
+      icon: faDatabase,
+      color: '#47A248',
       category: 'Database'
     },
     {
@@ -102,7 +109,8 @@ export class Skills implements OnInit, AfterViewInit {
       level: 90,
       description: 'Version control and collaborative development workflows',
       experience: '1+ years',
-      icon: '📦',
+      icon: faGit,
+      color: '#F05032',
       category: 'Tools'
     },
     {
@@ -110,16 +118,9 @@ export class Skills implements OnInit, AfterViewInit {
       level: 93,
       description: 'Modern styling with animations and responsive design',
       experience: '2+ years',
-      icon: '🎨',
+      icon: faCss3,
+      color: '#264DE4',
       category: 'Frontend'
-    },
-    {
-      name: 'REST APIs',
-      level: 89,
-      description: 'Designing and implementing RESTful web services',
-      experience: '6+ Months',
-      icon: '🔌',
-      category: 'Backend'
     }
   ];
 

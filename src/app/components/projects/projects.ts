@@ -53,131 +53,149 @@ export class Projects implements OnInit, OnDestroy {
   projects: Project[] = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution with real-time inventory management, payment integration, and admin dashboard.',
-      longDescription: 'Built a comprehensive e-commerce platform from scratch featuring user authentication, product management, shopping cart, payment gateway integration with Stripe, order tracking, and an advanced admin dashboard for analytics and inventory management.',
-      image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop',
+      title: 'Dairy Production Management System',
+      description: 'Ruhunu Yoghurt Dairy Product Management System is a complete platform for managing yoghurt production, inventory, distribution, sales, and quality tracking within the Ruhunu dairy process.',
+      longDescription: 'Delivery Component manages the full delivery workflow by converting orders into deliveries, automatically calculating distance-based costs, assigning drivers intelligently, and tracking delivery progress using start and end time ranges. It also includes a reporting feature for analyzing delivery performance and operational efficiency.',
+      image: 'p1.1.png',
       tags: ['Featured', 'Web'],
-      technologies: ['Angular', 'Node.js', 'MongoDB', 'Express', 'Stripe API'],
+      technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
       category: 'Web',
-      githubUrl: 'https://github.com',
-      liveUrl: 'https://example.com',
+      githubUrl: 'https://github.com/LEULEX-404/Ruhunu_Yoghurt',
+      liveUrl: 'https://ruhunu-yoghurt-imo.vercel.app/home',
       features: [
-        'Real-time inventory tracking with automatic stock updates',
-        'Secure payment processing with Stripe integration',
-        'Advanced search and filtering with Elasticsearch',
-        'User authentication with JWT and OAuth 2.0',
-        'Responsive design optimized for all devices',
-        'Admin dashboard with sales analytics and reporting'
+        'Convert Orders to Deliveries — Automatically generate deliveries from incoming orders.',
+        'Auto Distance & Cost Calculation — System calculates delivery cost based on distance.',
+        'Automatic Driver Assignment — Drivers are assigned intelligently without manual input.',
+        'Delivery Time Tracking — Add start time and end time to monitor delivery duration.',
+        'Delivery Handling — Manage delivery stages smoothly from creation to completion.',
+        'Reporting Module — Generate delivery performance and efficiency reports.'
       ],
       stats: [
-        { label: 'Users', value: '5K+' },
-        { label: 'Products', value: '1000+' },
-        { label: 'Orders', value: '10K+' },
+        { label: 'Users', value: '1K+' },
+        { label: 'Products', value: '100+' },
+        { label: 'Orders', value: '100+' },
         { label: 'Rating', value: '4.8/5' }
       ],
       gallery: [
-        'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
-        'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
-        'https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop',
-        'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&h=400&fit=crop'
+        'p1.2.png',
+        'p1.3.png',
+        'p1.4.png',
+        'p1.5.png',
+        'p1.6.png'
       ],
       challenges: [
         {
-          title: 'Real-time Inventory Sync',
-          solution: 'Implemented WebSocket connections for real-time inventory updates across multiple users, ensuring stock accuracy and preventing overselling.'
+          title: 'Distance & Cost Calculation',
+          solution: 'Automated distance-based cost calculation for accurate and consistent delivery pricing.'
         },
         {
-          title: 'Payment Security',
-          solution: 'Integrated Stripe with PCI compliance, implementing tokenization and 3D Secure authentication for enhanced security.'
+          title: 'Driver Assignment',
+          solution: 'Implemented automatic driver allocation based on availability and workload for efficiency.'
         }
       ],
       team: {
-        size: '4 developers',
-        role: 'Full-stack Developer & Team Lead',
-        duration: '6 months'
-      }
-    },
-    {
-      id: 2,
-      title: 'AI Chatbot Assistant',
-      description: 'An intelligent chatbot powered by machine learning algorithms for customer service automation.',
-      longDescription: 'Developed an AI-powered chatbot using natural language processing and machine learning to provide intelligent customer support, answer queries, and automate repetitive tasks with 95% accuracy.',
-      image: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&h=600&fit=crop',
-      tags: ['AI', 'Featured'],
-      technologies: ['Python', 'TensorFlow', 'React', 'NLP', 'FastAPI'],
-      category: 'AI/ML',
-      githubUrl: 'https://github.com',
-      liveUrl: 'https://example.com',
-      features: [
-        'Natural language understanding with BERT model',
-        'Multi-language support (English, Spanish, French)',
-        'Context-aware conversations with memory',
-        'Sentiment analysis for customer feedback',
-        'Integration with CRM systems',
-        'Learning from interactions to improve responses'
-      ],
-      stats: [
-        { label: 'Accuracy', value: '95%' },
-        { label: 'Languages', value: '3' },
-        { label: 'Queries/Day', value: '2K+' },
-        { label: 'Response Time', value: '< 1s' }
-      ],
-      team: {
-        size: '3 developers',
-        role: 'ML Engineer & Backend Developer',
+        size: '5 developers',
+        role: 'Full-stack Developer',
         duration: '4 months'
       }
     },
     {
+      id: 2,
+      title: 'Smart Customer Care System',
+      description: 'A web-based helpdesk system where customers can raise tickets, support agents resolve issues, managers oversee activities, and admins manage announcements and configurations.',
+      longDescription: 'The Admin module of the Smart Customer Care System allows administrators to efficiently manage system operations by creating, editing, and deleting announcements, ensuring timely communication with all users. Additionally, admins can manage user accounts, including adding new users, updating details, controlling roles and permissions, and deactivating accounts, providing secure and organized access to the system. This module serves as the central hub for maintaining system efficiency, communication, and user management.',
+      image: 'p2.1.png',
+      tags: ['Web', 'Featured'],
+      technologies: ['Java', 'MySQL'],
+      category: 'Web',
+      githubUrl: 'https://github.com/Imogirl/Smart-Customer-Care-System',
+      liveUrl: 'https://example.com',
+      features: [
+        'Manage Announcements — Create, edit, and delete system-wide announcements.',
+        'User Account Management — Add, update, or deactivate user accounts.',
+        'Central Management Hub — Oversee and maintain overall system organization and efficiency.'
+      ],
+      stats: [
+        { label: 'Accuracy', value: '95%' },
+        { label: 'Languages', value: '2' },
+        { label: 'Queries/Day', value: '2K+' },
+        { label: 'Response Time', value: '< 1s' }
+      ],
+      gallery: [
+        'p2.2.png',
+        'p2.3.png',
+        'p2.4.png'
+      ],
+      team: {
+        size: '4 developers',
+        role: 'Full Stack Developer',
+        duration: '2 months'
+      }
+    },
+    {
       id: 3,
-      title: 'Mobile Fitness Tracker',
-      description: 'Cross-platform mobile app for tracking workouts, nutrition, and health metrics with social features.',
-      longDescription: 'Created a comprehensive fitness tracking application with workout planning, nutrition logging, progress tracking, and social features to help users achieve their fitness goals.',
-      image: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&h=600&fit=crop',
+      title: 'Mobile Health Tracker',
+      description: 'A mobile app that monitors daily habits, mood, hydration, steps, and other smart wellness features to help users maintain a healthy lifestyle.',
+      longDescription: 'The Mobile Health Tracker is a comprehensive wellness application designed to help users maintain and improve their daily health. It allows users to track habits, monitor their mood, and maintain proper hydration levels throughout the day. The built-in step counter helps users stay active by monitoring daily physical activity, while the smart widgets provide quick access to important health metrics and reminders directly from the home screen. With its intuitive interface and smart tracking features, the app empowers users to make informed decisions about their lifestyle, promoting overall health and well-being.',
+      image: 'p3.1.png',
       tags: ['Mobile'],
-      technologies: ['React Native', 'Firebase', 'Redux', 'Google Fit API'],
+      technologies: ['Kotlin', 'XML'],
       category: 'Mobile',
       githubUrl: 'https://github.com',
       features: [
-        'Custom workout plans and exercise library',
-        'Calorie and macro tracking with barcode scanner',
-        'Progress photos and body measurements',
-        'Social feed and challenge competitions',
-        'Integration with wearable devices',
-        'Personalized recommendations using ML'
+        'Habit Tracking — Monitor daily routines and build healthy habits.',
+        'Mood Tracking — Record and analyze emotional patterns over time.',
+        'Hydration Monitoring — Track water intake and stay properly hydrated.',
+        'Step Counter — Measure daily steps to encourage physical activity.',
+        'Smart Widgets — Quick access to health stats and reminders from the home screen.',
+        'Comprehensive Health Insights — Get a clear overview of wellness trends and progress.'
       ],
       stats: [
         { label: 'Downloads', value: '50K+' },
         { label: 'Active Users', value: '15K+' },
         { label: 'Workouts', value: '100K+' },
         { label: 'App Rating', value: '4.7/5' }
+      ],
+      gallery: [
+        'p3.2.png',
+        'p3.3.png',
+        'p3.4.png',
+        'p3.5.png',
+        'p3.6.png'
       ]
     },
     {
       id: 4,
-      title: 'Real-Time Analytics Dashboard',
-      description: 'Interactive dashboard for visualizing business metrics and KPIs with real-time data updates.',
-      longDescription: 'Designed and developed a powerful analytics dashboard providing real-time insights into business performance with customizable widgets, interactive charts, and automated reporting.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
-      tags: ['Web', 'Data'],
-      technologies: ['Vue.js', 'D3.js', 'WebSocket', 'Python', 'PostgreSQL'],
-      category: 'Web',
+      title: 'Movie & Entertainment App',
+      description: 'An app to browse and book movies, games, and other entertainment options, with personalized settings for a tailored experience.',
+      longDescription: 'The Movie & Entertainment App provides a seamless platform for users to explore and enjoy a variety of entertainment options. Users can browse movies showing in their preferred cinema halls and explore other entertainment items such as games and bars. The app allows easy booking of movies and entertainment activities directly from the platform. Additionally, personalized settings let users tailor the experience to their preferences, including favorite genres, notifications, and preferred cinema locations. With its intuitive interface and comprehensive entertainment options, the app enhances the user’s leisure experience by making browsing, booking, and personalization quick and enjoyable.',
+      image: 'p4.5.png',
+      tags: ['Mobile'],
+      technologies: ['Kotlin', 'XML'],
+      category: 'Mobile',
       githubUrl: 'https://github.com',
       liveUrl: 'https://example.com',
       features: [
-        'Real-time data streaming with WebSocket',
-        'Customizable dashboard with drag-and-drop widgets',
-        'Interactive charts and visualizations',
-        'Automated report generation and email delivery',
-        'Multi-tenant support with role-based access',
-        'Export data in multiple formats (PDF, Excel, CSV)'
+        'Browse Movies — Explore movies currently showing in your preferred cinema halls.',
+        'Entertainment Options — Discover games, bars, and other leisure activities.',
+        'Booking System — Easily book movies or entertainment activities directly through the app.',
+        'Personalized Settings — Customize preferences like favorite genres, notifications, and cinema locations.',
+        'Intuitive Interface — User-friendly navigation for smooth browsing and booking.',
+        'Comprehensive Entertainment Hub — All-in-one platform for movies, games, and other leisure options.'
       ],
       stats: [
         { label: 'Data Points', value: '1M+' },
         { label: 'Updates/Sec', value: '100+' },
         { label: 'Charts', value: '50+' },
         { label: 'Companies', value: '200+' }
+      ],
+      gallery: [
+        'p4.1.png',
+        'p4.2.png',
+        'p4.3.png',
+        'p4.4.png',
+        'p4.6.png',
+        'p4.7.png'
       ]
     },
     {
@@ -210,37 +228,11 @@ export class Projects implements OnInit, OnDestroy {
           solution: 'Implemented zero-knowledge proofs to ensure vote anonymity while maintaining verifiability.'
         }
       ]
-    },
-    {
-      id: 6,
-      title: 'Social Media Content Scheduler',
-      description: 'Multi-platform content scheduling tool with analytics and AI-powered caption suggestions.',
-      longDescription: 'Built an all-in-one social media management platform that helps businesses schedule content, analyze performance, and generate engaging captions using AI.',
-      image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop',
-      tags: ['Web', 'AI'],
-      technologies: ['Next.js', 'PostgreSQL', 'OpenAI', 'Redis', 'AWS'],
-      category: 'Web',
-      githubUrl: 'https://github.com',
-      liveUrl: 'https://example.com',
-      features: [
-        'Schedule posts across multiple platforms',
-        'AI-powered caption and hashtag suggestions',
-        'Content calendar with drag-and-drop interface',
-        'Performance analytics and engagement tracking',
-        'Team collaboration and approval workflows',
-        'Media library with cloud storage integration'
-      ],
-      stats: [
-        { label: 'Users', value: '8K+' },
-        { label: 'Posts Scheduled', value: '500K+' },
-        { label: 'Platforms', value: '6' },
-        { label: 'Time Saved', value: '70%' }
-      ]
     }
   ];
 
   // Filter options
-  filters: string[] = ['All', 'Web', 'Mobile', 'AI/ML', 'Blockchain'];
+  filters: string[] = ['All', 'Web', 'Mobile'];
   activeFilter: string = 'All';
   
   // Filtered projects

@@ -18,7 +18,7 @@
         class="tab-button"
         [class.active]="activeCategory === i"
         (click)="setActiveCategory(i)">
-        <span class="tab-icon" [innerHTML]="category.icon"></span>
+        <fa-icon [icon]="category.icon" size="1x"class="gradient-icon"></fa-icon>
         <span class="tab-text">{{ category.name }}</span>
         <span class="tab-glow"></span>
       </button>
@@ -36,7 +36,7 @@
         <div class="card-glow"></div>
         
         <div class="skill-icon">
-          <span [innerHTML]="skill.icon"></span>
+          <fa-icon [icon]="skill.icon" [style.color]="skill.color" ></fa-icon>
           <div class="icon-glow"></div>
         </div>
         

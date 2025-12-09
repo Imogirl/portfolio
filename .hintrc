@@ -7,7 +7,10 @@
       "default",
       {
         "ignore": [
-          "-webkit-backdrop-filter"
+          "-webkit-backdrop-filter",
+          "scrollbar-width",
+          "scrollbar-color",
+          "scrollbar-width: thin"
         ]
       }
     ],
@@ -22,6 +25,12 @@
       "default",
       {
         "button-name": "off"
+      }
+    ],
+    "axe/structure": [
+      "default",
+      {
+        "list": "off"
       }
     ]
   }

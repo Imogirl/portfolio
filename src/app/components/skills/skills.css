@@ -41,8 +41,8 @@
 .title-gradient {
   background: linear-gradient(135deg, #a78bfa 0%, #ec4899 50%, #8b5cf6 100%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-clip: text;
+  -webkit-text-fill-color: transparent;
   animation: gradient-shift 3s ease infinite;
   background-size: 200% 200%;
 }
@@ -98,6 +98,23 @@
   align-items: center;
 }
 
+.tab-button .gradient-icon {
+  font-size: 24px;
+  background: linear-gradient(45deg, #ff00ff, #ff66ff, #ff33cc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.tab-button:hover .gradient-icon {
+  filter: drop-shadow(0 0 6px #ff33cc)
+          drop-shadow(0 0 10px #ff00ff);
+  transition: 0.3s;
+}
+
+
+
 .tab-glow {
   position: absolute;
   top: 0;
@@ -128,6 +145,7 @@
   border: 1px solid rgba(167, 139, 250, 0.2);
   border-radius: 16px;
   -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   transition: all 0.4s ease;
   animation: fadeInUp 0.6s ease forwards;
   opacity: 0;
@@ -167,6 +185,8 @@
   font-size: 32px;
   color: #a78bfa;
 }
+
+
 
 .icon-glow {
   position: absolute;
@@ -276,6 +296,7 @@
   border: 1px solid rgba(167, 139, 250, 0.2);
   border-radius: 16px;
   -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   transition: all 0.4s ease;
   animation: fadeInUp 0.6s ease forwards;
   opacity: 0;
