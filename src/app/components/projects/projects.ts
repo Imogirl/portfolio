@@ -174,7 +174,6 @@ export class Projects implements OnInit, OnDestroy {
       technologies: ['Kotlin', 'XML'],
       category: 'Mobile',
       githubUrl: 'https://github.com',
-      liveUrl: 'https://example.com',
       features: [
         'Browse Movies — Explore movies currently showing in your preferred cinema halls.',
         'Entertainment Options — Discover games, bars, and other leisure activities.',
@@ -200,21 +199,23 @@ export class Projects implements OnInit, OnDestroy {
     },
     {
       id: 5,
-      title: 'Blockchain Voting System',
-      description: 'Secure and transparent voting platform built on blockchain technology ensuring vote integrity.',
-      longDescription: 'Developed a decentralized voting system leveraging blockchain technology to ensure transparency, immutability, and security in electoral processes.',
-      image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=600&fit=crop',
-      tags: ['Blockchain', 'Featured'],
-      technologies: ['Solidity', 'Web3.js', 'Ethereum', 'React', 'IPFS'],
-      category: 'Blockchain',
-      githubUrl: 'https://github.com',
+      title: 'Portfolio Website',
+      description: 'A modern and interactive portfolio website built with Angular, showcasing my skills, projects, and experience through a clean design, smooth animations, and responsive UI components.',
+      longDescription: 'This Angular-based portfolio website is a fully responsive and modern digital identity crafted to highlight my professional journey. It features an elegant UI with dynamic animations, category-based skill filtering, animated counters, particle effects, and technology highlights. The site is built using Angular standalone components and FontAwesome icons, ensuring high performance and clean architecture. Visitors can explore my technical skills, view completed projects, read about my experience, and easily connect with me. The portfolio is designed to be visually appealing, intuitive to navigate, and optimized for both desktop and mobile devices—reflecting my passion for front-end development and clean, scalable code.',
+      image: 'p5.1.png',
+      tags: ['Web', 'Featured'],
+      technologies: ['Angular', 'HTML', 'CSS'],
+      category: 'Web',
+      githubUrl: 'https://github.com/Imogirl/portfolio',
+      liveUrl: 'https://imasha-portfolio.vercel.app/',
       features: [
-        'Immutable vote recording on Ethereum blockchain',
-        'Anonymous voting with zero-knowledge proofs',
-        'Smart contract verification and auditing',
-        'Decentralized identity management',
-        'Real-time vote counting and results',
-        'IPFS storage for candidate information'
+        'Modern, responsive Angular UI with standalone components',
+        'Category-based skill filtering',
+        'Technology carousel with icons',
+        'Smooth hover and scroll animations',
+        'Particle background effects',
+        'Clean, fast, and optimized performance',
+        'Easy to customize and expand'
       ],
       stats: [
         { label: 'Transactions', value: '10K+' },
@@ -222,10 +223,21 @@ export class Projects implements OnInit, OnDestroy {
         { label: 'Security Audits', value: '3' },
         { label: 'Elections', value: '25+' }
       ],
+      gallery: [
+        'p5.2.png',
+        'p5.3.png',
+        'p5.4.png',
+        'p5.5.png',
+        'p5.6.png'
+      ],
       challenges: [
         {
-          title: 'Voter Privacy',
-          solution: 'Implemented zero-knowledge proofs to ensure vote anonymity while maintaining verifiability.'
+          title: 'Animation Execution Errors',
+          solution: 'Ensured all animations run only in the browser using isPlatformBrowser() checks.'
+        },
+        {
+          title: 'IntersectionObserver / Document Not Defined',
+          solution: 'Wrapped DOM-dependent code inside ngAfterViewInit() and added safety checks to prevent execution during SSR or server builds.'
         }
       ]
     }
