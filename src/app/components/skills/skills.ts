@@ -1,12 +1,11 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { Component, OnInit, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { 
   faAngular, faReact, faNodeJs, faHtml5, faCss3, faJs, faGit, faAws
 } from '@fortawesome/free-brands-svg-icons';
-import { faDatabase, faServer, faTools, faRocket, faClock,  faBolt, faPaintBrush, faCog, faWrench,faLayerGroup, faLaptopCode  } from '@fortawesome/free-solid-svg-icons';
+import { faDatabase, faServer, faWrench, faLayerGroup, faLaptopCode } from '@fortawesome/free-solid-svg-icons';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
-
 
 interface Skill {
   name: string;
@@ -21,7 +20,7 @@ interface Skill {
 interface Category {
   name: string;
   icon: IconDefinition;
-  color:string;
+  color: string;
 }
 
 interface Stat {
@@ -39,30 +38,33 @@ interface Technology {
 
 @Component({
   selector: 'app-skills',
-   standalone: true,
-  imports: [CommonModule,FontAwesomeModule],
+  standalone: true,
+  imports: [CommonModule, FontAwesomeModule],
   templateUrl: './skills.html',
   styleUrls: ['./skills.css']
 })
 export class Skills implements OnInit, AfterViewInit {
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
   activeCategory: number = 0;
   hoveredSkill: string | null = null;
   filteredSkills: Skill[] = [];
   particles: any[] = [];
 
   categories: Category[] = [
-    { name: 'All', icon: faLayerGroup ,color:'#FFD700'  },
-    { name: 'Frontend', icon: faLaptopCode, color:'#FF4500'  },
-    { name: 'Backend', icon: faServer, color:'#1E90FF'  },
-    { name: 'Database', icon: faDatabase, color:'#32CD32'  },
-    { name: 'Tools', icon: faWrench, color:'#8A2BE2'  },
+    { name: 'All', icon: faLayerGroup, color: '#FFD700' },
+    { name: 'Frontend', icon: faLaptopCode, color: '#FF4500' },
+    { name: 'Backend', icon: faServer, color: '#1E90FF' },
+    { name: 'Database', icon: faDatabase, color: '#32CD32' },
+    { name: 'Tools', icon: faWrench, color: '#8A2BE2' },
   ];
 
   skills: Skill[] = [
     {
       name: 'Angular',
       level: 50,
-      description: 'Building dynamic single-page applications with advanced features',
+      description: 'Building dynamic single-page applications.',
       experience: '2+ Months',
       icon: faAngular,
       color: '#DD0031',
@@ -71,7 +73,7 @@ export class Skills implements OnInit, AfterViewInit {
     {
       name: 'React',
       level: 90,
-      description: 'Creating interactive UIs with modern React hooks and patterns',
+      description: 'Creating interactive UIs with React hooks.',
       experience: '6+ Months',
       icon: faReact,
       color: '#61DAFB',
@@ -80,7 +82,7 @@ export class Skills implements OnInit, AfterViewInit {
     {
       name: 'TypeScript',
       level: 92,
-      description: 'Type-safe development with advanced TypeScript features',
+      description: 'Type-safe development with TypeScript.',
       experience: '3+ Months',
       icon: faJs,
       color: '#3178C6',
@@ -89,7 +91,7 @@ export class Skills implements OnInit, AfterViewInit {
     {
       name: 'Node.js',
       level: 88,
-      description: 'Building scalable server-side applications and REST APIs',
+      description: 'Building server-side apps with Node.js.',
       experience: '6+ Months',
       icon: faNodeJs,
       color: '#3C873A',
@@ -98,7 +100,7 @@ export class Skills implements OnInit, AfterViewInit {
     {
       name: 'MongoDB',
       level: 87,
-      description: 'NoSQL database design and optimization',
+      description: 'NoSQL database design and optimization.',
       experience: '6+ Months',
       icon: faDatabase,
       color: '#47A248',
@@ -107,7 +109,7 @@ export class Skills implements OnInit, AfterViewInit {
     {
       name: 'Git',
       level: 90,
-      description: 'Version control and collaborative development workflows',
+      description: 'Version control system.',
       experience: '1+ years',
       icon: faGit,
       color: '#F05032',
@@ -116,7 +118,7 @@ export class Skills implements OnInit, AfterViewInit {
     {
       name: 'CSS',
       level: 93,
-      description: 'Modern styling with animations and responsive design',
+      description: 'Modern styling and animations.',
       experience: '2+ years',
       icon: faCss3,
       color: '#264DE4',
@@ -125,40 +127,24 @@ export class Skills implements OnInit, AfterViewInit {
   ];
 
   stats: Stat[] = [
-    {
-      value: 5,
-      suffix: '+',
-      label: 'Projects Completed',
-      icon: '🚀'
-    },
-    {
-      value: 1,
-      suffix: '+',
-      label: 'Years Experience',
-      icon: '⏱️'
-    },
-    {
-      value: 5,
-      suffix: '+',
-      label: 'Technologies',
-      icon: '💻'
-    },
+    { value: 5, suffix: '+', label: 'Projects Completed', icon: '🚀' },
+    { value: 1, suffix: '+', label: 'Years Experience', icon: '⏱️' },
+    { value: 5, suffix: '+', label: 'Technologies', icon: '💻' },
   ];
 
- technologies: Technology[] = [
-  { name: 'HTML5', logo: faHtml5, color: '#DD4B25' },
-  { name: 'CSS3', logo: faCss3, color: '#264DE4' },
-  { name: 'JavaScript', logo: faJs, color: '#F7DF1E' },
-  { name: 'TypeScript', logo: faJs, color: '#3178C6' },
-  { name: 'Angular', logo: faAngular, color: '#DD0031' },
-  { name: 'React', logo: faReact, color: '#61DAFB' },
-  { name: 'Node.js', logo: faNodeJs, color: '#3C873A' },
-  { name: 'Express', logo: faServer, color: '#858484FF' },
-  { name: 'MongoDB', logo: faDatabase, color: '#47A248' },
-  { name: 'Git', logo: faGit, color: '#F05032' },
-  { name: 'AWS', logo: faAws, color: '#FF9900' },
-];
-
+  technologies: Technology[] = [
+    { name: 'HTML5', logo: faHtml5, color: '#DD4B25' },
+    { name: 'CSS3', logo: faCss3, color: '#264DE4' },
+    { name: 'JavaScript', logo: faJs, color: '#F7DF1E' },
+    { name: 'TypeScript', logo: faJs, color: '#3178C6' },
+    { name: 'Angular', logo: faAngular, color: '#DD0031' },
+    { name: 'React', logo: faReact, color: '#61DAFB' },
+    { name: 'Node.js', logo: faNodeJs, color: '#3C873A' },
+    { name: 'Express', logo: faServer, color: '#858484FF' },
+    { name: 'MongoDB', logo: faDatabase, color: '#47A248' },
+    { name: 'Git', logo: faGit, color: '#F05032' },
+    { name: 'AWS', logo: faAws, color: '#FF9900' },
+  ];
 
   ngOnInit(): void {
     this.filterSkills();
@@ -166,7 +152,9 @@ export class Skills implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.animateCounters();
+    if (isPlatformBrowser(this.platformId)) { 
+      this.animateCounters();
+    }
   }
 
   setActiveCategory(index: number): void {
@@ -185,6 +173,8 @@ export class Skills implements OnInit, AfterViewInit {
 
   generateParticles(): void {
     this.particles = [];
+    if (!isPlatformBrowser(this.platformId)) return;
+
     for (let i = 0; i < 20; i++) {
       this.particles.push({
         style: {
@@ -197,11 +187,10 @@ export class Skills implements OnInit, AfterViewInit {
   }
 
   animateCounters(): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+    if (typeof IntersectionObserver === 'undefined') return;
+
     const counters = document.querySelectorAll('.counter');
-    
-    const observerOptions = {
-      threshold: 0.5
-    };
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -226,7 +215,7 @@ export class Skills implements OnInit, AfterViewInit {
           observer.unobserve(counter);
         }
       });
-    }, observerOptions);
+    }, { threshold: 0.5 });
 
     counters.forEach(counter => observer.observe(counter));
   }

@@ -1,0 +1,190 @@
+<section id="about" class="about-section">
+  <div class="about-container">
+    
+    <!-- Hero Section -->
+    <div class="about-hero animate-on-scroll">
+      <div class="hero-content">
+        <span class="hero-label">
+          <fa-icon [icon]="aboutCards[0].icon" class="label-icon"></fa-icon>
+          Get To Know Me
+        </span>
+        <h1 class="hero-title">
+          Hi, I'm <span class="title-gradient">Imasha Dulshini</span>
+        </h1>
+        <h2 class="hero-subtitle">
+          <span class="typing-text">Software Engineering Student</span>
+          <span class="cursor">|</span>
+        </h2>
+        <p class="hero-description">
+          A passionate software engineering undergraduate with a love for creating beautiful, 
+          functional applications. I'm on a journey to master the art of code and make a 
+          positive impact through technology.
+        </p>
+        
+        <!-- Social Links -->
+        <div class="social-links">
+          <a *ngFor="let social of socialLinks" 
+             [href]="social.url" 
+             class="social-link"
+             target="_blank"
+             [attr.aria-label]="social.name">
+            <fa-icon [icon]="social.icon" size="lg"></fa-icon>
+            <span class="link-glow"></span>
+          </a>
+        </div>
+      </div>
+      
+      <div class="hero-visual">
+        <div class="visual-orb orb-purple"></div>
+        <div class="visual-orb orb-pink"></div>
+        <div class="visual-frame">
+          <div class="frame-corner corner-tl"></div>
+          <div class="frame-corner corner-tr"></div>
+          <div class="frame-corner corner-bl"></div>
+          <div class="frame-corner corner-br"></div>
+          <div class="code-animation">
+            <div class="code-line" *ngFor="let i of [1,2,3,4,5,6,7,8]"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Cards Grid -->
+    <div class="cards-grid">
+      <div *ngFor="let card of aboutCards; let i = index"
+           class="about-card animate-on-scroll"
+           [style.animation-delay]="i * 0.1 + 's'">
+        <div class="card-glow"></div>
+        <div class="card-icon">
+          <fa-icon [icon]="card.icon" size="2x" [style.color]="card.color"></fa-icon>
+          <div class="icon-pulse"></div>
+        </div>
+        <h3 class="card-title">{{ card.title }}</h3>
+        <p class="card-description">{{ card.description }}</p>
+        <div class="card-shine"></div>
+      </div>
+    </div>
+
+    <!-- Story Section -->
+    <div class="story-section animate-on-scroll">
+      <div class="story-content">
+        <h3 class="story-title">
+          <fa-icon [icon]="aboutCards[3].icon" class="title-icon"></fa-icon>
+          My Journey
+        </h3>
+        <div class="story-text">
+          <p>
+            My coding journey began with a simple "Hello World" program, and it sparked a 
+            passion that continues to grow every day. As a software engineering student, 
+            I'm constantly amazed by the power of technology to transform ideas into reality.
+          </p>
+          <p>
+            I specialize in full-stack development, with a strong foundation in modern 
+            frameworks like Angular, React, and Node.js. What drives me is not just writing 
+            code, but crafting solutions that make a difference in people's lives.
+          </p>
+          <p>
+            When I'm not coding, you'll find me exploring new technologies, contributing to 
+            open-source projects, or brainstorming the next big idea. I believe in lifelong 
+            learning and the incredible potential of collaboration.
+          </p>
+        </div>
+      </div>
+      <div class="story-stats">
+        <div class="stat-item" *ngFor="let achievement of achievements; let i = index"
+             [style.animation-delay]="i * 0.15 + 's'">
+          <div class="stat-icon">
+            <fa-icon [icon]="achievement.icon" size="2x"></fa-icon>
+          </div>
+          <div class="stat-content">
+            <h4 class="stat-title">{{ achievement.title }}</h4>
+            <p class="stat-description">{{ achievement.description }}</p>
+            <span class="stat-year">{{ achievement.year }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interests Section -->
+    <div class="interests-section animate-on-scroll">
+      <h3 class="section-title">
+        <span class="title-icon">
+          <fa-icon [icon]="aboutCards[1].icon"></fa-icon>
+        </span>
+        Things I Love
+      </h3>
+      <div class="interests-grid">
+        <div *ngFor="let interest of interests; let i = index"
+             class="interest-card"
+             [style.animation-delay]="i * 0.1 + 's'">
+          <div class="interest-icon">
+            <fa-icon [icon]="interest.icon" size="2x" [style.color]="interest.color"></fa-icon>
+          </div>
+          <span class="interest-name">{{ interest.name }}</span>
+          <div class="interest-glow"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Values Section -->
+    <div class="values-section animate-on-scroll">
+      <h3 class="section-title">
+        <span class="title-icon">
+          <fa-icon [icon]="aboutCards[2].icon"></fa-icon>
+        </span>
+        What I Value
+      </h3>
+      <div class="values-grid">
+        <div *ngFor="let value of values; let i = index"
+             class="value-card"
+             [style.animation-delay]="i * 0.1 + 's'">
+          <div class="value-icon-wrapper">
+            <fa-icon [icon]="value.icon" size="lg" class="value-icon"></fa-icon>
+          </div>
+          <h4 class="value-title">{{ value.title }}</h4>
+          <p class="value-description">{{ value.description }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-section animate-on-scroll">
+      <div class="cta-content">
+        <h3 class="cta-title">Let's Build Something Amazing Together</h3>
+        <p class="cta-description">
+          I'm always open to new opportunities, collaborations, and conversations. 
+          Whether you have a project in mind or just want to connect, feel free to reach out!
+        </p>
+        <div class="cta-buttons">
+          <a href="#contact" class="cta-button primary">
+            <fa-icon [icon]="aboutCards[2].icon"></fa-icon>
+            <span>Get In Touch</span>
+            <div class="button-glow"></div>
+          </a>
+          <a href="#projects" class="cta-button secondary">
+            <fa-icon [icon]="aboutCards[0].icon"></fa-icon>
+            <span>View My Work</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Background Effects -->
+  <div class="bg-gradient gradient-1"></div>
+  <div class="bg-gradient gradient-2"></div>
+  <div class="bg-gradient gradient-3"></div>
+  <div class="particle" *ngFor="let particle of particles" [style]="particle.style"></div>
+  
+  <!-- Floating Elements -->
+  <div class="floating-element element-1">
+    <fa-icon [icon]="aboutCards[0].icon" size="2x"></fa-icon>
+  </div>
+  <div class="floating-element element-2">
+    <fa-icon [icon]="aboutCards[2].icon" size="2x"></fa-icon>
+  </div>
+  <div class="floating-element element-3">
+    <fa-icon [icon]="aboutCards[1].icon" size="2x"></fa-icon>
+  </div>
+</section>

@@ -1,0 +1,209 @@
+<section id="contact" class="contact-section">
+  <div class="contact-container">
+    
+    <!-- Section Header -->
+    <div class="section-header animate-on-scroll">
+      <span class="section-label">
+        <fa-icon [icon]="faEnvelope" class="label-icon"></fa-icon>
+        Let's Connect
+      </span>
+      <h1 class="section-title">
+        <span class="title-gradient">Get In Touch</span>
+      </h1>
+      <p class="section-description">
+        Have a project in mind or just want to chat? I'd love to hear from you! 
+        Drop me a message and I'll get back to you as soon as possible.
+      </p>
+    </div>
+
+    <div class="contact-content">
+      
+      <!-- Contact Form -->
+      <div class="form-section animate-on-scroll">
+        <div class="form-container">
+          <h2 class="form-title">
+            <fa-icon [icon]="faPaperPlane" class="form-icon"></fa-icon>
+            Send Me a Message
+          </h2>
+          
+          <form (ngSubmit)="onSubmit()" #contactForm="ngForm" *ngIf="!formSubmitted">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name" class="form-label">
+                  <fa-icon [icon]="faUser"></fa-icon>
+                  Your Name
+                </label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name"
+                  [(ngModel)]="formData.name"
+                  class="form-input"
+                  placeholder="Enter Your Name"
+                  required>
+                <div class="input-glow"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">
+                  <fa-icon [icon]="faEnvelope"></fa-icon>
+                  Your Email
+                </label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email"
+                  [(ngModel)]="formData.email"
+                  class="form-input"
+                  placeholder="your@gmail.com"
+                  required>
+                <div class="input-glow"></div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="subject" class="form-label">
+                <fa-icon [icon]="faComment"></fa-icon>
+                Subject
+              </label>
+              <input 
+                type="text" 
+                id="subject" 
+                name="subject"
+                [(ngModel)]="formData.subject"
+                class="form-input"
+                placeholder="Project Collaboration">
+              <div class="input-glow"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label">
+                <fa-icon [icon]="faComment"></fa-icon>
+                Your Message
+              </label>
+              <textarea 
+                id="message" 
+                name="message"
+                [(ngModel)]="formData.message"
+                class="form-textarea"
+                rows="6"
+                placeholder="Tell me about your project or just say hi..."
+                required></textarea>
+              <div class="input-glow"></div>
+            </div>
+
+            <button 
+              type="submit" 
+              class="submit-button"
+              [disabled]="!isFormValid() || isSubmitting"
+              [class.loading]="isSubmitting">
+              <span class="button-content" *ngIf="!isSubmitting">
+                <fa-icon [icon]="faPaperPlane"></fa-icon>
+                Send Message
+              </span>
+              <span class="button-content" *ngIf="isSubmitting">
+                <fa-icon [icon]="faSpinner" class="spinning"></fa-icon>
+                Sending...
+              </span>
+              <div class="button-glow"></div>
+            </button>
+          </form>
+
+          <!-- Success Message -->
+          <div class="success-message" *ngIf="formSubmitted">
+            <div class="success-icon">
+              <fa-icon [icon]="faCheckCircle" size="3x"></fa-icon>
+            </div>
+            <h3 class="success-title">Message Sent Successfully! 🎉</h3>
+            <p class="success-text">
+              Thank you for reaching out! I'll get back to you as soon as possible.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Info Sidebar -->
+      <div class="info-section animate-on-scroll">
+        
+        <!-- Contact Info Cards -->
+        <div class="info-cards">
+          <div *ngFor="let info of contactInfo; let i = index" 
+               class="info-card"
+               [style.animation-delay]="i * 0.1 + 's'">
+            <div class="card-glow"></div>
+            <div class="info-icon" [style.color]="info.color">
+              <fa-icon [icon]="info.icon" size="2x"></fa-icon>
+              <div class="icon-ring"></div>
+            </div>
+            <div class="info-content">
+              <h3 class="info-title">{{ info.title }}</h3>
+              <a *ngIf="info.link" 
+                 [href]="info.link" 
+                 class="info-value link">
+                {{ info.value }}
+              </a>
+              <p *ngIf="!info.link" class="info-value">{{ info.value }}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="social-section">
+          <h3 class="social-title">
+            <span class="title-line"></span>
+            Connect With Me
+            <span class="title-line"></span>
+          </h3>
+          <div class="social-grid">
+            <a *ngFor="let social of socialLinks; let i = index"
+               [href]="social.url"
+               target="_blank"
+               class="social-card"
+               [style.animation-delay]="i * 0.1 + 's'"
+               [attr.aria-label]="social.name">
+              <div class="social-glow"></div>
+              <fa-icon [icon]="social.icon" size="2x" [style.color]="social.color"></fa-icon>
+              <div class="social-info">
+                <span class="social-name">{{ social.name }}</span>
+                <span class="social-username">{{ social.username }}</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Response -->
+        <div class="response-card">
+          <div class="response-icon">
+            <fa-icon [icon]="faCheckCircle"></fa-icon>
+          </div>
+          <h4 class="response-title">Quick Response</h4>
+          <p class="response-text">
+            I typically respond within 24 hours during weekdays. 
+            For urgent matters, feel free to reach out via phone or WhatsApp!
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+
+
+  </div>
+
+  <!-- Background Effects -->
+  <div class="bg-gradient gradient-1"></div>
+  <div class="bg-gradient gradient-2"></div>
+  <div class="bg-gradient gradient-3"></div>
+  <div class="particle" *ngFor="let particle of particles" [style]="particle.style"></div>
+  
+  <!-- Floating Icons -->
+  <div class="floating-icon icon-1">
+    <fa-icon [icon]="faEnvelope" size="2x"></fa-icon>
+  </div>
+  <div class="floating-icon icon-2">
+    <fa-icon [icon]="faPaperPlane" size="2x"></fa-icon>
+  </div>
+  <div class="floating-icon icon-3">
+    <fa-icon [icon]="faComment" size="2x"></fa-icon>
+  </div>
+</section>
