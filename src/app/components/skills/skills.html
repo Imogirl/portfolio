@@ -69,7 +69,7 @@
     <div class="stats-section">
       <div class="stat-card" *ngFor="let stat of stats; let i = index" [style.animation-delay]="i * 0.2 + 's'">
         <div class="stat-glow"></div>
-        <div class="stat-icon" [innerHTML]="stat.icon"></div>
+        <fa-icon [icon]="stat.icon" size="2x"[style.color]="stat.color"></fa-icon>
         <div class="stat-content">
           <h3 class="stat-number">
             <span class="counter" [attr.data-target]="stat.value">0</span>

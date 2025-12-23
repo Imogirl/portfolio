@@ -4,7 +4,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { 
   faAngular, faReact, faNodeJs, faHtml5, faCss3, faJs, faGit, faAws
 } from '@fortawesome/free-brands-svg-icons';
-import { faDatabase, faServer, faWrench, faLayerGroup, faLaptopCode } from '@fortawesome/free-solid-svg-icons';
+import { faDatabase, faServer, faWrench, faLayerGroup, faLaptopCode, faClock, faLaptop, faRocket } from '@fortawesome/free-solid-svg-icons';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 interface Skill {
@@ -27,7 +27,8 @@ interface Stat {
   value: number;
   suffix: string;
   label: string;
-  icon: string;
+  icon: IconDefinition;
+  color:string;
 }
 
 interface Technology {
@@ -127,9 +128,9 @@ export class Skills implements OnInit, AfterViewInit {
   ];
 
   stats: Stat[] = [
-    { value: 5, suffix: '+', label: 'Projects Completed', icon: '🚀' },
-    { value: 1, suffix: '+', label: 'Years Experience', icon: '⏱️' },
-    { value: 5, suffix: '+', label: 'Technologies', icon: '💻' },
+    { value: 5, suffix: '+', label: 'Projects Completed', icon: faRocket, color: '#858484FF' },
+    { value: 1, suffix: '+', label: 'Years Experience', icon: faClock,  color: '#858484FF'},
+    { value: 5, suffix: '+', label: 'Technologies', icon: faLaptop, color: '#858484FF' },
   ];
 
   technologies: Technology[] = [
