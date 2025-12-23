@@ -91,19 +91,19 @@ export class About implements OnInit, AfterViewInit {
     {
       title: 'Academic Excellence',
       description: 'Maintaining high GPA while mastering full-stack development',
-      year: '2024',
+      year: '2023-2025',
       icon: faAward
     },
     {
-      title: 'Open Source Contributor',
+      title: 'GitHub Activity',
       description: 'Contributing to community projects and learning from the best',
-      year: '2024',
+      year: '2024-2025',
       icon: faGithub
     },
     {
       title: 'Personal Projects',
       description: 'Built 5+ full-stack applications from concept to deployment',
-      year: '2023-2024',
+      year: '2024-2025',
       icon: faLaptopCode
     }
   ];
@@ -115,8 +115,8 @@ export class About implements OnInit, AfterViewInit {
       icon: faTerminal
     },
     {
-      title: 'User-Centric',
-      description: 'Designing experiences that delight users and solve real problems',
+      title: 'Teamwork',
+      description: 'Working well with others to achieve goals',
       icon: faUsers
     },
     {

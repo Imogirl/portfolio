@@ -36,15 +36,18 @@ export class Footer implements OnInit {
   }
 
   onSocialClick(platform: string): void {
-    // Handle social media link clicks
-    // You can add analytics tracking here
-    console.log(`Clicked on ${platform}`);
-    
-    // Prevent default for demo purposes
-    // Remove this in production and add actual social media URLs in the template
-    event?.preventDefault();
-    
-    // Example: Open in new tab
-    // window.open('your-social-url', '_blank');
+  // Log for analytics or debugging
+  console.log(`Navigating to ${platform}`);
+  
+  // Optional: Add analytics tracking
+  if (typeof window !== 'undefined' && (window as any).gtag) {
+    (window as any).gtag('event', 'social_link_click', {
+      platform: platform,
+      event_category: 'engagement',
+      event_label: platform
+    });
   }
+  
+  // The actual navigation happens via href, so no need to prevent default
+}
 }
