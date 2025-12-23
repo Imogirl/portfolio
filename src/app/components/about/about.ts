@@ -96,7 +96,7 @@ export class About implements OnInit, AfterViewInit {
     },
     {
       title: 'GitHub Activity',
-      description: 'Contributing to community projects and learning from the best',
+      description: 'Worked on personal coding projects and version control using GitHub',
       year: '2024-2025',
       icon: faGithub
     },
