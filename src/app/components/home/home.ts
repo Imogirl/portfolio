@@ -1,8 +1,9 @@
-
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Inject, PLATFORM_ID, ChangeDetectorRef } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-home',
+  standalone: true,
   imports: [],
   templateUrl: './home.html',
   styleUrls: ['./home.css']
@@ -23,9 +24,23 @@ export class Home implements OnInit, OnDestroy {
   private deletingSpeed: number = 50;
   private pauseTime: number = 2000;
   private typingInterval: any;
+  private isBrowser: boolean;
+
+  constructor(
+    @Inject(PLATFORM_ID) platformId: object,
+    private cdr: ChangeDetectorRef
+  ) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
 
   ngOnInit(): void {
-    this.startTypingAnimation();
+    console.log('Home component initialized');
+    console.log('Is Browser?', this.isBrowser);
+    
+    if (this.isBrowser) {
+      // Start immediately
+      this.startTypingAnimation();
+    }
   }
 
   ngOnDestroy(): void {
@@ -35,17 +50,21 @@ export class Home implements OnInit, OnDestroy {
   }
 
   private startTypingAnimation(): void {
-    const currentFullRole = this.roles[this.currentRoleIndex];
+    if (!this.isBrowser) return;
 
+    const currentFullRole = this.roles[this.currentRoleIndex];
+    
     if (!this.isDeleting && this.charIndex < currentFullRole.length) {
       // Typing
       this.currentRole = currentFullRole.substring(0, this.charIndex + 1);
       this.charIndex++;
+      this.cdr.detectChanges(); // Force change detection
       this.typingInterval = setTimeout(() => this.startTypingAnimation(), this.typingSpeed);
     } else if (this.isDeleting && this.charIndex > 0) {
       // Deleting
       this.currentRole = currentFullRole.substring(0, this.charIndex - 1);
       this.charIndex--;
+      this.cdr.detectChanges(); // Force change detection
       this.typingInterval = setTimeout(() => this.startTypingAnimation(), this.deletingSpeed);
     } else if (!this.isDeleting && this.charIndex === currentFullRole.length) {
       // Pause at end of word

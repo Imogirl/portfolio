@@ -38,12 +38,12 @@
             <img [src]="project.image" [alt]="project.title">
             <div class="image-overlay">
               <button class="overlay-btn" (click)="openProject(project)">
-                <span class="btn-icon">👁️</span>
+                 <i class="fas fa-eye"></i>
                 View Details
               </button>
               @if (project.liveUrl) {
                 <a [href]="project.liveUrl" target="_blank" class="overlay-btn">
-                  <span class="btn-icon">🚀</span>
+                  <i class="fas fa-rocket"></i>
                   Live Demo
                 </a>
               }
@@ -144,7 +144,7 @@
           <!-- Description -->
           <div class="modal-section">
             <h3 class="section-title">
-              <span class="title-icon">📋</span>
+              <i class="fas fa-clipboard"></i>
               Project Overview
             </h3>
             <p class="modal-description">{{ selectedProject.description }}</p>
@@ -156,7 +156,7 @@
           <!-- Technologies -->
           <div class="modal-section">
             <h3 class="section-title">
-              <span class="title-icon">🛠️</span>
+              <i class="fas fa-tools"></i>
               Technologies Used
             </h3>
             <div class="tech-grid">
@@ -173,7 +173,7 @@
           @if (selectedProject.features) {
             <div class="modal-section">
               <h3 class="section-title">
-                <span class="title-icon">⭐</span>
+                <i class="fas fa-star"></i>
                 Key Features
               </h3>
               <ul class="features-list">
@@ -191,7 +191,7 @@
           @if (selectedProject.stats) {
             <div class="modal-section">
               <h3 class="section-title">
-                <span class="title-icon">📊</span>
+                <i class="fas fa-chart-bar"></i>
                 Project Statistics
               </h3>
               <div class="stats-grid">
@@ -209,7 +209,7 @@
           @if (selectedProject.gallery && selectedProject.gallery.length > 0) {
             <div class="modal-section">
               <h3 class="section-title">
-                <span class="title-icon">🖼️</span>
+                <i class="fas fa-images"></i>
                 Project Gallery
               </h3>
               <div class="gallery-grid">
@@ -217,7 +217,7 @@
                   <div class="gallery-item" (click)="openGalleryImage(i)">
                     <img [src]="img" [alt]="'Gallery image ' + (i + 1)">
                     <div class="gallery-overlay">
-                      <span class="gallery-icon">🔍</span>
+                     <i class="fas fa-search-plus"></i>
                     </div>
                   </div>
                 }
@@ -229,7 +229,7 @@
           @if (selectedProject.challenges) {
             <div class="modal-section">
               <h3 class="section-title">
-                <span class="title-icon">🎯</span>
+                <i class="fas fa-bullseye"></i>
                 Challenges & Solutions
               </h3>
               <div class="challenges-container">
@@ -247,7 +247,7 @@
           @if (selectedProject.team) {
             <div class="modal-section">
               <h3 class="section-title">
-                <span class="title-icon">👥</span>
+                <i class="fas fa-users"></i>
                 Team & Role
               </h3>
               <p class="team-info">

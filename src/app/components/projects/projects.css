@@ -201,8 +201,26 @@
   transform: scale(1.05);
 }
 
+/* Icon styling */
+.btn-icon,
+.title-icon,
+.gallery-icon {
+  display: inline-block;
+  margin-right: 8px;
+  font-size: inherit;
+}
+
 .btn-icon {
   font-size: 16px;
+}
+
+.title-icon {
+  font-size: 20px;
+  color: var(--neon-blue);
+}
+
+.gallery-icon {
+  font-size: 24px;
 }
 
 /* ==================== CARD CONTENT ==================== */
@@ -549,10 +567,6 @@
   gap: 12px;
 }
 
-.title-icon {
-  font-size: 24px;
-}
-
 .modal-description {
   font-size: 16px;
   line-height: 1.8;
@@ -715,10 +729,6 @@
 
 .gallery-item:hover .gallery-overlay {
   opacity: 1;
-}
-
-.gallery-icon {
-  font-size: 32px;
 }
 
 /* ==================== CHALLENGES ==================== */
