@@ -3,7 +3,7 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { 
   faGraduationCap, faCode, faLaptopCode, faBrain, faHeart, faGamepad,
-  faMusic, faBook, faCoffee, faRocket, faBolt, faStar, faAward,
+  faMusic, faBook, faCoffee, faRocket, faBolt, faStar, faAward,faEnvelope,
   faUsers, faChartLine, faLightbulb, faPalette, faTerminal, faDatabase
 } from '@fortawesome/free-solid-svg-icons';
 import { 
@@ -132,10 +132,10 @@ export class About implements OnInit, AfterViewInit {
   ];
 
   socialLinks = [
-    { icon: faGithub, url: '#', name: 'GitHub' },
-    { icon: faLinkedin, url: '#', name: 'LinkedIn' },
-    { icon: faTwitter, url: '#', name: 'Twitter' },
-    { icon: faInstagram, url: '#', name: 'Instagram' }
+    { icon: faGithub, url: 'https://github.com/imogirl', name: 'GitHub' },
+    { icon: faLinkedin, url: 'https://linkedin.com/in/imashadulshini', name: 'LinkedIn' },
+    { icon: faEnvelope, url: 'mailto:imashadulxsini1@gmail.com', name: 'Email' },
+    { icon: faInstagram, url: 'https://instagram.com/maddumage.m.i.d.r', name: 'Instagram' }
   ];
 
   ngOnInit(): void {
