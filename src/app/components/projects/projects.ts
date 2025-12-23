@@ -240,7 +240,39 @@ export class Projects implements OnInit, OnDestroy {
           solution: 'Wrapped DOM-dependent code inside ngAfterViewInit() and added safety checks to prevent execution during SSR or server builds.'
         }
       ]
-    }
+    },
+    {
+     id: 6,
+     title: 'Cake Shop POS System',
+     description: 'A complete point-of-sale system for cake shops with barcode scanning, invoice generation, product management, and sales analysis.',
+     longDescription: 'The Cake Shop POS System is designed to streamline cake shop operations by integrating product management, barcode scanning, invoice generation, and sales reporting. Staff can quickly scan products, update inventory in real-time, and generate invoices for customers. The system also provides detailed sales analytics, including best-selling products, revenue trends, and stock alerts. Designed with an intuitive interface, it simplifies daily operations, improves accuracy, and enhances customer service for small and medium cake shops.',
+     image: 'p6.1.jpg',
+     tags: ['Web', 'Desktop', 'POS'],
+     technologies: ['React', 'Node.js', 'Express', 'MongoDB'],
+     category: 'Web',
+     githubUrl: 'https://github.com/LEULEX-404/Cake_Shop_MERN',
+     liveUrl: 'https://cake-shop-mern-frontend.onrender.com/',
+     features: [
+       'Barcode Scanner — Quickly scan cake products for faster billing.',
+       'Invoice Generation — Automatically generate printable invoices for customers.',
+       'Product Management — Add, update, and remove cake products with pricing and stock levels.',
+       'Sales Analytics — View reports on revenue, best-selling cakes, and stock alerts.',
+       'Inventory Management — Track stock in real-time and receive low-stock notifications.',
+       'User-friendly Interface — Simplified POS interface for smooth operation by staff.',
+       'Customer Management — Keep track of repeat customers and their preferences.'
+     ],
+     stats: [
+       { label: 'Products Managed', value: '50+' },
+       { label: 'Invoices Generated', value: '1K+' },
+       { label: 'Daily Transactions', value: '50+' },
+       { label: 'Reports Generated', value: '10+' }
+     ],
+     gallery: [
+       'p6.2.jpeg',
+       'p6.3.jpeg',
+       'p6.4.jpeg'
+     ]
+}   
   ];
 
   // Filter options
