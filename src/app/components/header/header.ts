@@ -1,9 +1,10 @@
 import { Component, HostListener } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, RouterOutlet],
+  standalone: true,
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './header.html',
   styleUrls: ['./header.css']
 })
@@ -32,9 +33,6 @@ export class Header {
     if (this.isMenuOpen) {
       this.closeMenu();
     }
-
-    // Add active class to links based on scroll position
-    this.highlightActiveSection();
   }
 
   @HostListener('window:resize', [])
@@ -43,26 +41,5 @@ export class Header {
     if (window.innerWidth > 768 && this.isMenuOpen) {
       this.closeMenu();
     }
-  }
-
-  private highlightActiveSection(): void {
-    const sections = ['home', 'skills', 'projects', 'about', 'contact'];
-    const scrollPosition = window.scrollY + 100;
-
-    sections.forEach(section => {
-      const element = document.getElementById(section);
-      const link = document.querySelector(`a[href="#${section}"]`);
-      
-      if (element && link) {
-        const offsetTop = element.offsetTop;
-        const offsetHeight = element.offsetHeight;
-
-        if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
-        }
-      }
-    });
   }
 }

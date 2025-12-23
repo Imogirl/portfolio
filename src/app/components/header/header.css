@@ -6,6 +6,7 @@
   width: 100%;
   z-index: 1000;
   background: rgba(10, 10, 30, 0.95);
+  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(168, 85, 247, 0.2);
   box-shadow: 0 4px 30px rgba(168, 85, 247, 0.1);
@@ -185,6 +186,7 @@
     width: 70%;
     height: 100vh;
     background: rgba(10, 10, 30, 0.98);
+    backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     flex-direction: column;
     justify-content: center;
