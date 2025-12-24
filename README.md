@@ -150,17 +150,6 @@
 </tr>
 </table>
 
-### 🌈 Additional Technologies
-
-<p>
-<img src="https://img.shields.io/badge/RxJS-B7178C?style=for-the-badge&logo=reactivex&logoColor=white" />
-<img src="https://img.shields.io/badge/Angular_Material-0081CB?style=for-the-badge&logo=angular&logoColor=white" />
-<img src="https://img.shields.io/badge/Particles.js-000000?style=for-the-badge" />
-<img src="https://img.shields.io/badge/AOS-Animate_On_Scroll-FF6B6B?style=for-the-badge" />
-<img src="https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=white" />
-<img src="https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white" />
-</p>
-
 </div>
 
 <div align="center">
@@ -230,41 +219,6 @@
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="700">
 </div>
 
-## 🎯 Design Philosophy
-
-<table>
-<tr>
-<td width="50%">
-
-### Design Principles
-
-| Principle | Implementation |
-|-----------|----------------|
-| ✨ **Minimalism** | Clean layouts with purposeful whitespace |
-| 🎨 **Consistency** | Unified color palette and typography system |
-| ♿ **Accessibility** | WCAG 2.1 AA compliant with keyboard navigation |
-| 🎭 **Microinteractions** | Subtle animations that enhance user feedback |
-| 📈 **Progressive Enhancement** | Core functionality works without JavaScript |
-
-</td>
-<td width="50%">
-
-### Color Scheme
-
-<div align="center">
-
-![Primary](https://via.placeholder.com/120x60/DD0031/FFFFFF?text=Primary+%E2%9D%A4%EF%B8%8F)
-![Secondary](https://via.placeholder.com/120x60/0081CB/FFFFFF?text=Secondary+%F0%9F%92%99)
-![Accent](https://via.placeholder.com/120x60/88CE02/FFFFFF?text=Accent+%F0%9F%92%9A)
-![Dark](https://via.placeholder.com/120x60/1A1A2E/FFFFFF?text=Dark+%F0%9F%96%A4)
-![Light](https://via.placeholder.com/120x60/F8F9FA/000000?text=Light+%F0%9F%A4%8D)
-
-</div>
-
-</td>
-</tr>
-</table>
-
 <div align="center">
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="700">
 </div>
@@ -286,13 +240,6 @@
 
 </div>
 
-### 🔧 Optimization Techniques
-- ✂️ Component-level code splitting
-- ⚡ Lazy loading of routes and images
-- 🚀 AOT (Ahead-of-Time) compilation
-- 🌳 Tree-shaking for minimal bundle size
-- 🌐 CDN delivery for static assets
-- 📦 Service worker for offline capability
 
 <div align="center">
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="700">
