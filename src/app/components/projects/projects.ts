@@ -275,7 +275,7 @@ export class Projects implements OnInit, OnDestroy {
 }   
   ];
 
-  // Filter options
+  
   filters: string[] = ['All', 'Web', 'Mobile'];
   activeFilter: string = 'All';
   
