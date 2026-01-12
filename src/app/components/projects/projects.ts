@@ -279,7 +279,7 @@ export class Projects implements OnInit, OnDestroy {
   filters: string[] = ['All', 'Web', 'Mobile'];
   activeFilter: string = 'All';
   
-  // Filtered projects
+  
   filteredProjects: Project[] = [];
   
   // Pagination
