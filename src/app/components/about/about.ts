@@ -164,13 +164,7 @@ export class About implements OnInit, AfterViewInit {
     }
   }
 
-  observeAnimations(): void {
-
-    // 🚀 FIX: Prevent crash if browser doesn’t support IntersectionObserver
-    if (typeof IntersectionObserver === 'undefined') {
-      console.warn('IntersectionObserver not supported');
-      return;
-    }
+  
 
     const observerOptions = {
       threshold: 0.1,
